@@ -6,7 +6,10 @@ import requests
 import json
 from datetime import datetime
 from bs4 import BeautifulSoup
-
+"""
+cron: 0 7,19 * * *
+name: 爱坤VPN
+"""
 def send_wecom_message(content):
     """发送企业微信应用消息"""
     corpid = os.environ.get('WECOM_CORPID')
