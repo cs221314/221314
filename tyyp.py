@@ -13,7 +13,10 @@ import rsa
 import requests
 import random
 import os
-
+"""
+cron: 0 7,19 * * *
+name: 天翼云盘签到
+"""
 BI_RM = list("0123456789abcdefghijklmnopqrstuvwxyz")
 
 B64MAP = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
