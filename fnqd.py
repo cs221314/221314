@@ -10,7 +10,7 @@
 - WECOM_AGENTID：应用AgentId
 """
 """
-cron: 1 8 * * *
+cron: 1 8,18 * * *
 name: 飞牛签到
 """
 import os
