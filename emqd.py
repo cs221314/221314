@@ -1,7 +1,7 @@
-/**
- * @cron 0 7-19/6 * * *
- * @description MEFRP签到
- */
+"""
+cron: 0 7-19/6 * * *
+name: MEFRP签到
+"""
 import os
 import requests
 import logging
