@@ -9,7 +9,10 @@
 - WECOM_SECRET：应用Secret
 - WECOM_AGENTID：应用AgentId
 """
-
+"""
+cron: 1 8 * * *
+name: 飞牛签到
+"""
 import os
 import requests
 from bs4 import BeautifulSoup
