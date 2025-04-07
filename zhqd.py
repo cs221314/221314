@@ -10,7 +10,10 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from pyquery import PyQuery as pq
 import xml.etree.ElementTree as ET
-
+"""
+cron: 0 30 7,15 * * *
+name: 整合签到平台
+"""
 # 配置日志系统
 def setup_logging():
     logger = logging.getLogger()
