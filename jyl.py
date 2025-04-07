@@ -5,7 +5,10 @@ import re
 import json
 from pyquery import PyQuery as pq
 from datetime import datetime
-
+"""
+cron: 0 7,19 * * *
+name: 皎月连
+"""
 # 配置日志格式
 logging.basicConfig(
     level=logging.DEBUG,
