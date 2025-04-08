@@ -69,27 +69,6 @@ def parse_user_info(html):
     
     return info
 
-def extract_traffic_gain(msg):
-    """从签到消息中提取获得的流量"""
-    if not msg:
-        return "0B"
-    
-    # 匹配常见流量表述方式
-    import re
-    patterns = [
-        r'获得(\d+\.?\d*)(GB|MB|KB|B)',
-        r'增加了(\d+\.?\d*)(GB|MB|KB|B)',
-        r'(\d+\.?\d*)(GB|MB|KB|B)流量'
-    ]
-    
-    for pattern in patterns:
-        match = re.search(pattern, msg)
-        if match:
-            amount, unit = match.groups()
-            return f"{amount}{unit}"
-    
-    return "0B"
-
 def main():
     # 基础配置
     host = os.environ.get('HOST', '').rstrip('/')
@@ -125,7 +104,7 @@ def main():
         # 4. 处理签到结果
         if checkin_data.get('ret') == 1:
             status = "✅ 签到成功"
-            traffic_gain = extract_traffic_gain(checkin_data.get('msg', ''))
+            traffic_gain = checkin_data.get('msg', '0B')  # 直接使用返回的消息
         elif "已经签到" in checkin_data.get('msg', ''):
             status = "ℹ️ 今日已签到"
             traffic_gain = "0B"
